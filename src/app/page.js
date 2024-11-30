@@ -24,7 +24,27 @@ function page() {
         </div>
       </div>
 
-      <div className="max-w-[1000px] mx-auto mt-[198px] mb-[800px]">
+
+
+
+      <div className=" mx-auto flex flex-row justify-between mt-[198px] mb-[800px] items-center">
+      <div className="flex flex-col gap-6 items-center ">
+            <span className="rotate-90 mb-6 text-lg font-bold">Follow us</span>
+            <Image
+              src="/instagram.png"
+              alt="Description of image"
+              width={24}
+              height={24}
+            />
+            <Image
+              src="/twitter.png"
+              alt="Description of image"
+              width={24}
+              height={24}
+            />
+        </div>
+
+        <div className="max-w-[950px]">
         <div className="flex flex-row gap-8 items-center">
           <div className="w-[72px] h-[2px] bg-[#FBD784] "></div>
           <span className="text-lg font-extrabold text-[#FBD784] tracking-[6px]">
@@ -37,7 +57,12 @@ function page() {
         <div>
           <span className="text-2xl">scroll down</span>
         </div>
+        </div>
+
+        
       </div>
+
+
 
       <div className=" mx-[149px] flex flex-col gap-[200px]">
         <div className="page_1 flex items-center">
