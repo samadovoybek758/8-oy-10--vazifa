@@ -2,6 +2,9 @@ import React from "react";
 import Image from "next/image";
 
 function page() {
+
+
+
   return (
     <div className="bigDiv max-w-[1920px] mx-auto px-20 pb-[120px] mb-20 pt-16">
 
@@ -28,7 +31,7 @@ function page() {
 
 
       <div className=" mx-auto flex flex-row justify-between mt-[198px] mb-[800px] items-center">
-      <div className="flex flex-col gap-6 items-center ">
+      <div className="flex flex-col gap-6 items-center fixed left-20 ">
             <span className="rotate-90 mb-6 text-lg font-bold">Follow us</span>
             <Image
               src="/instagram.png"
@@ -43,6 +46,7 @@ function page() {
               height={24}
             />
         </div>
+        <div></div>
 
         <div className="max-w-[950px]">
         <div className="flex flex-row gap-8 items-center">
@@ -58,8 +62,17 @@ function page() {
           <span className="text-2xl">scroll down</span>
         </div>
         </div>
+        <div></div>
 
-        <div className="w-20"></div>
+        <div className="flex gap-8 fixed right-20">
+        <div className="flex flex-col gap-10 items-center">
+           <span className="text-lg font-bold">Start</span>
+           <span className="text-lg font-bold">01</span>
+           <span className="text-lg font-bold">02</span>
+           <span className="text-lg font-bold">03</span>
+        </div>
+        <div className="w-[3px] h-[240px] bg-white"></div>
+        </div>
 
         
       </div>
