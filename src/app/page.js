@@ -1,12 +1,29 @@
-import React from "react";
+'use client'
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
 function page() {
+  const [scrollPosition, setScrollPosition] = useState(0);
 
+  useEffect(() => {
+    // Scroll hodisasi uchun event handler
+    const handleScroll = () => {
+      console.log("Scroll o'zgardi!", window.scrollY); // Konsolga scroll holatini chiqarish
+      setScrollPosition(window.scrollY); // Scroll holatini yangilash
+    };
+
+    // Event listenerni qo'shish
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup - component chiqarilganda event listenerni olib tashlash
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []); // Bu faqat birinchi renderda ishlaydi
 
 
   return (
-    <div className="bigDiv max-w-[1920px] mx-auto px-20 pb-[120px] mb-20 pt-16">
+    <div className="bigDiv max-w-[1920px] mx-auto px-20 pb-[120px]  pt-16" >
 
       <div className=" flex justify-between">
         
@@ -67,9 +84,9 @@ function page() {
         <div className="flex gap-8 fixed right-20">
         <div className="flex flex-col gap-10 items-center">
            <span className="text-lg font-bold">Start</span>
-           <span className="text-lg font-bold">01</span>
-           <span className="text-lg font-bold">02</span>
-           <span className="text-lg font-bold">03</span>
+           <span className={`text-lg font-bold ${scrollPosition >= 800 && scrollPosition < 1800 ? "text-[#FBD784]" : ""}`}>01</span>
+           <span className={`text-lg font-bold ${scrollPosition >= 1600 && scrollPosition < 2700 ? "text-[#FBD784]" : ""}`}>02</span>
+           <span className={`text-lg font-bold ${scrollPosition >= 2700 ? "text-[#FBD784]" : ""}`}>03</span>
         </div>
         <div className="w-[3px] h-[240px] bg-white"></div>
         </div>
@@ -220,3 +237,8 @@ function page() {
 }
 
 export default page;
+
+
+
+
+
